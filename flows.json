@@ -954,7 +954,7 @@
         "id": "6d702ef817415440",
         "type": "comment",
         "z": "2fc5da9320b3050a",
-        "name": "Retorna dados Weather Station para uma requisiÃ§Ã£o Web HTTP GET",
+        "name": "Retorna dados Weather Station para uma requisição Web HTTP GET",
         "info": "",
         "x": 310,
         "y": 500,
@@ -975,7 +975,8 @@
         "y": 620,
         "wires": [
             [
-                "e1dab601406654c8"
+                "e1dab601406654c8",
+                "0ee8543d1cccfef1"
             ]
         ]
     },
@@ -1055,7 +1056,8 @@
         "y": 740,
         "wires": [
             [
-                "78a4eba60ef21df3"
+                "78a4eba60ef21df3",
+                "00cfb7c84e79196a"
             ]
         ]
     },
@@ -1100,7 +1102,8 @@
         "y": 860,
         "wires": [
             [
-                "b6586d7d36845020"
+                "b6586d7d36845020",
+                "5fabc20f60e0d270"
             ]
         ]
     },
@@ -1200,7 +1203,7 @@
                 "b71e41f59f84d258"
             ]
         ],
-        "info": "Variavel de ambiente do Heroku \r\ncom o endereÃ§o da URL."
+        "info": "Variavel de ambiente do Heroku \r\ncom o endereço da URL."
     },
     {
         "id": "0397836a0c213fa7",
@@ -1228,7 +1231,7 @@
                 "2e54a41425df5703"
             ]
         ],
-        "info": "Variavel de ambiente do Heroku \r\ncom o endereÃ§o da URL."
+        "info": "Variavel de ambiente do Heroku \r\ncom o endereço da URL."
     },
     {
         "id": "766f79c7a001e922",
@@ -1256,6 +1259,138 @@
                 "0ee94793e339f0f1"
             ]
         ],
-        "info": "Variavel de ambiente do Heroku \r\ncom o endereÃ§o da URL."
+        "info": "Variavel de ambiente do Heroku \r\ncom o endereço da URL."
+    },
+    {
+        "id": "287cc726e0f23a53",
+        "type": "debug",
+        "z": "2fc5da9320b3050a",
+        "name": "log get onecall",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "0ee8543d1cccfef1",
+        "type": "change",
+        "z": "2fc5da9320b3050a",
+        "name": "onecall timestamp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 620,
+        "wires": [
+            [
+                "287cc726e0f23a53"
+            ]
+        ]
+    },
+    {
+        "id": "b3802420b6aec74e",
+        "type": "debug",
+        "z": "2fc5da9320b3050a",
+        "name": "log get weather",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "00cfb7c84e79196a",
+        "type": "change",
+        "z": "2fc5da9320b3050a",
+        "name": "weather timestamp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 740,
+        "wires": [
+            [
+                "b3802420b6aec74e"
+            ]
+        ]
+    },
+    {
+        "id": "a294818cfe67744d",
+        "type": "debug",
+        "z": "2fc5da9320b3050a",
+        "name": "log get forecast",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "5fabc20f60e0d270",
+        "type": "change",
+        "z": "2fc5da9320b3050a",
+        "name": "forecast timestamp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 860,
+        "wires": [
+            [
+                "a294818cfe67744d"
+            ]
+        ]
     }
 ]
